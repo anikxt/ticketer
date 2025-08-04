@@ -1,0 +1,34 @@
+:root {
+  /* Colors */
+  --color-primary: #3984fc;
+  --color-primary-dark: #2f6fc3;
+  --color-bg: #f0f4ff;
+  --color-surface: #ffffff;
+  --color-border: #d1dce8;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #5e6c84;
+  --color-accent: #fcbb39;
+  --color-success: #2da44e;
+  --color-error: #e24343;
+
+  /* Font */
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.5rem);
+}
+
+body {
+  font-family: var(--font);
+  height: 100vh;
+}

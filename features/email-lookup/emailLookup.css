@@ -1,0 +1,106 @@
+.lookup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
+.lookup__button {
+  font-size: 1rem;
+  background: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: var(--color-surface);
+  font-weight: 500;
+}
+
+.lookup__button:hover {
+  background: var(--color-primary-dark);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.result__title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+
+.result__email {
+  padding-left: 0.5rem;
+}
+
+/* Test CSS */
+/* features/email-lookup/emailLookup.css */
+.email-results {
+  padding: 1rem;
+}
+
+.primary-email {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.email-address {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.email-context {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.email-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.source,
+.priority {
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.other-emails summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.email-item {
+  border-left: 3px solid #dee2e6;
+  padding-left: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-message.loading {
+  color: #007bff;
+}
+
+.result-message.error {
+  color: #dc3545;
+}
+
+.result-message.no-results {
+  color: #6c757d;
+}

@@ -1,0 +1,11 @@
+# Chrome extension files
+*.crx
+*.pem
+key.pem
+
+# Dependencies
+node_modules/
+
+# Server
+server
+server/server.js

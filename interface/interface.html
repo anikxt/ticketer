@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/styles/base.css" />
+    <link rel="stylesheet" href="../assets/styles/utilities.css" />
+    <link rel="stylesheet" href="../features/header/header.css" />
+    <link rel="stylesheet" href="../features/auth/auth.css" />
+    <link rel="stylesheet" href="../features/email-lookup/emailLookup.css" />
+
+    <!-- Document Processing Libraries -->
+    <script src="../assets/libs/pdfjs-dist.js"></script>
+    <script src="../assets/libs/mammoth.js"></script>
+
+    <!-- Title -->
+    <title>Ticketer</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="header container">
+      <img
+        src="../assets/images/icon-128.png"
+        alt="logo"
+        class="header__logo"
+      />
+      <div class="header__title">Ticketer</div>
+      <div class="header__menu">
+        <!-- Material "More Horiz" icon button -->
+        <button class="header__menu-btn" aria-label="Open menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#1a1a1a"
+            class="header__menu-btn-icon"
+          >
+            <path
+              d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div class="header__menu-dropdown">
+          <button class="header__menu-dropdown-item auth__switch">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="22px"
+              viewBox="0 -960 960 960"
+              width="22px"
+              fill="#1a1a1a"
+            >
+              <path
+                d="M560-520q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM320-330q45-53 108-81.5T560-440q69 0 132 28.5T800-330v-470H320v470Zm0 90q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm400-520q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680q17 0 28.5 11.5T600-640q0 17-11.5 28.5T560-600ZM428-320h264q-29-20-63-30t-69-10q-35 0-69 10t-63 30Zm132-245Z"
+              />
+            </svg>
+            Switch account
+          </button>
+          <button class="header__menu-dropdown-item auth__logout">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="22px"
+              viewBox="0 -960 960 960"
+              width="22px"
+              fill="#1a1a1a"
+            >
+              <path
+                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"
+              />
+            </svg>
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth -->
+    <div class="auth container">
+      <button class="gsi-material-button auth__login">
+        <div class="gsi-material-button-state"></div>
+        <div class="gsi-material-button-content-wrapper">
+          <div class="gsi-material-button-icon">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 48 48"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              style="display: block"
+            >
+              <path
+                fill="#EA4335"
+                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+              ></path>
+              <path
+                fill="#4285F4"
+                d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+              ></path>
+              <path
+                fill="#FBBC05"
+                d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+              ></path>
+              <path
+                fill="#34A853"
+                d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+              ></path>
+              <path fill="none" d="M0 0h48v48H0z"></path>
+            </svg>
+          </div>
+          <span class="gsi-material-button-contents">Sign in with Google</span>
+          <span style="display: none">Sign in with Google</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile container">
+      <div class="profile__email"></div>
+      <button class="profile__logout auth__logout">Sign out</button>
+    </div>
+
+    <!-- Look up for email -->
+    <div class="lookup container">
+      <button class="lookup__button">Look up email</button>
+    </div>
+
+    <!-- Results -->
+    <div class="result container">
+      <div class="result__title">Result</div>
+      <div class="result__email"></div>
+    </div>
+
+    <script type="module" src="interface.js"></script>
+  </body>
+</html>
